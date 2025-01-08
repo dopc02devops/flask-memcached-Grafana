@@ -41,19 +41,7 @@
         # - deploy_test_env
             # git tag release-1.0
             # git push origin release-1.0
-
-# git commands
-      git checkout -b ur-branch
-      git checkout ur-branch
-      git commit --allow-empty -m "Trigger build"
-      git push origin ur-branch
-      git commit --no-verify -m "added commands.txt file"
-      git commit -q -m "Your commit message"
-      git commit -m "Update docs [ci skip]"
-      git push -q origin main
-      git push origin main --no-verify
-
-
+            
 # create cluster
 
 # install nfs-server
