@@ -1,0 +1,14 @@
+
+#####################
+application deployment
+#####################
+# create cluster
+# add firewall
+# install nfs-server
+# install loki
+# use cirleci to deploy application
+# access application
+- kubectl get svc -n stage
+- get the external ip of the service
+- go to ur browser and enter
+- externalip:port to access application

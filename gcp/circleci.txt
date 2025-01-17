@@ -1,0 +1,52 @@
+
+# Circleci pipeline
+    # push to main will trigger the below pipelines
+        # - install_dependencies
+        # - scan_docker_file
+        # - test
+        # - build_docker_image
+    # push to main with tag will trigger the below pipelines
+        # - build_docker_image_tag
+        # - deploy_test_env
+            # git tag version-1.0
+            # git push origin version-1.0
+    # push to main with release tag will trigger the below pipelines
+        # - build_docker_image_tag
+        # - deploy_test_env
+            # git tag release-1.0
+            # git push origin release-1.0
+
+# Trigger cirleci pipeline
+        git tag release-1.0
+        git push origin release-1.0
+        git commit --allow-empty -m "Trigger build"
+
+# commands for debugging
+        kubectl get pods -n stage
+        kubectl get pod <pod-name> -n stage
+        kubectl logs <pod-name> -n stage
+        kubectl get pvc -n stage
+        kubectl describe pod <pod-name> -n stage
+        kubectl get events -n stage
+        kubectl describe deployment flask-app-deployment -n stage
+        kubectl get pods --all-namespaces
+        kubectl delete pods -l app=flask-app -n stage
+        kubectl delete deployment flask-app-deployment -n stage
+        kubectl delete service flask-app-service -n stage
+        kubectl delete pvc flask-app-volume -n stage
+        kubectl delete pvc flask-app-volume --force --grace-period=067 -n stage
+
+# git commands
+      git checkout -b ur-branch
+      git checkout ur-branch
+      git commit --allow-empty -m "Trigger build"
+      git push origin ur-branch
+      git commit --no-verify -m "added commands.txt file"
+      git commit -q -m "Your commit message"
+      git commit -m "Update docs [ci skip]"
+      git push -q origin main
+      git push origin main --no-verify
+
+# Copy ssh keys
+     pbcopy < ~/.ssh/id_kube_user_key.pub
+     pbcopy < ~/.ssh/id_kube_user_key

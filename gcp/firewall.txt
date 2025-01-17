@@ -1,0 +1,33 @@
+
+################
+firewalls
+###############
+# list firewalls
+- gcloud compute firewall-rules list
+
+# get machines
+- gcloud compute instances list --zones europe-west2-a
+
+# get machine tags
+- gcloud compute instances describe <node-name> --format="get(tags.items)"
+
+# tag machine
+gcloud compute instances add-tags <node-name> --tags gke-my-cluster
+
+# open firewall
+gcloud compute firewall-rules create allow-ssh-and-custom-ports \
+--allow tcp:22,tcp:8096,tcp:8091,tcp:8095 \
+--target-tags gke-my-cluster \
+--description "Allow SSH and custom ports access to GKE nodes" \
+--direction INGRESS \
+--priority 1000
+
+# get credentials
+gcloud container clusters get-credentials my-cluster --region europe-west2-a
+
+# describe machine
+gcloud compute instances describe my-vm --zone europe-west2-a --project superb-gear-443409-t3
+
+# login to cluster
+- go to cluster and copy connect command
+- gcloud container clusters get-credentials my-cluster --zone europe-west2-a --project superb-gear-443409-t3

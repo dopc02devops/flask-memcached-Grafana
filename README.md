@@ -24,32 +24,3 @@
 # Copy ssh keys
     # pbcopy < ~/.ssh/id_kube_user_key.pub
     # pbcopy < ~/.ssh/id_kube_user_key
-
-# Circleci pipeline
-    # push to main will trigger the below pipelines
-        # - install_dependencies
-        # - scan_docker_file
-        # - test
-        # - build_docker_image
-    # push to main with tag will trigger the below pipelines
-        # - build_docker_image_tag
-        # - deploy_test_env
-            # git tag version-1.0
-            # git push origin version-1.0
-    # push to main with release tag will trigger the below pipelines
-        # - build_docker_image_tag
-        # - deploy_test_env
-            # git tag release-1.0
-            # git push origin release-1.0
-            
-# create cluster
-
-# install nfs-server
-
-# install loki
-
-# access application
-- kubectl get svc -n stage
-- get the external ip of the service
-- go to ur browser and enter
-- externalip:port to access application
