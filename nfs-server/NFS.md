@@ -4,6 +4,7 @@
 - helm repo add nfs-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
 - helm repo update
 - kubectl apply -f nfs-server/nfs.yaml
+- kubectl apply -f nfs-service.yaml -n storage
 - helm install nfs-provisioner nfs-provisioner/nfs-subdir-external-provisioner \
   --namespace storage \
   --set nfs.server=nfs-server.storage.svc.cluster.local \

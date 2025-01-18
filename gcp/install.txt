@@ -3,6 +3,7 @@
 application deployment
 #####################
 # create cluster
+# add tags
 # add firewall
 # install nfs-server
 # install loki

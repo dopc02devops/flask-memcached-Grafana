@@ -1,6 +1,6 @@
 
 ################
-firewalls
+tag machines
 ###############
 # list firewalls
 - gcloud compute firewall-rules list
@@ -14,6 +14,10 @@ firewalls
 # tag machine
 gcloud compute instances add-tags <node-name> --tags gke-my-cluster
 
+################
+firewalls
+###############
+# gcloud compute firewall-rules delete allow-ssh-and-custom-ports --project=superb-gear-443409-t3
 # open firewall
 gcloud compute firewall-rules create allow-ssh-and-custom-ports \
 --allow tcp:22,tcp:8096,tcp:8091,tcp:8095 \
@@ -22,6 +26,9 @@ gcloud compute firewall-rules create allow-ssh-and-custom-ports \
 --direction INGRESS \
 --priority 1000
 
+################
+machines
+###############
 # get credentials
 gcloud container clusters get-credentials my-cluster --region europe-west2-a
 
