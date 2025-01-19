@@ -1,20 +1,5 @@
 
 ################
-tag machines
-###############
-# list firewalls
-- gcloud compute firewall-rules list
-
-# get machines
-- gcloud compute instances list --zones europe-west2-a
-
-# get machine tags
-- gcloud compute instances describe <node-name> --format="get(tags.items)"
-
-# tag machine
-gcloud compute instances add-tags <node-name> --tags gke-my-cluster
-
-################
 firewalls
 ###############
 # gcloud compute firewall-rules delete allow-ssh-and-custom-ports --project=superb-gear-443409-t3
