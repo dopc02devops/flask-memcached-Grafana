@@ -24,3 +24,7 @@
 # Copy ssh keys
     # pbcopy < ~/.ssh/id_kube_user_key.pub
     # pbcopy < ~/.ssh/id_kube_user_key
+
+
+
+https://www.fosstechnix.com/kubernetes-metrics-and-logs-using-prometheus-filebeat-and-grafana-loki/
